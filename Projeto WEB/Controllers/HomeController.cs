@@ -18,6 +18,23 @@ namespace Projeto_WEB.Controllers
             return View();
         }
 
+        public IActionResult MinhaTela()
+        {
+            return View();  
+        }
+
+        public IActionResult Login() 
+        {
+            return View();
+        }
+
+
+
+
+
+
+
+
         public IActionResult Privacy()
         {
             return View();
