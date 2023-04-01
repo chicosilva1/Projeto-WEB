@@ -1,0 +1,106 @@
+﻿<div class="row">
+
+    <div class="col-12
+">
+        <div class="card">    
+            <div class="card-header">
+                <h2>Lista de Cliente</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-2">
+                        <a href="/Cliente/Cadastrar" class="btn btn-success">
+                            Novo Cliente    
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <select name="Filtro" class="form-control">
+                            <option value="0">Todas Opções</option>
+                            <option value="id">Por Nome</option>
+                            <option value="nome">Por Telefone</option>
+                            <option value="qtd">Por email</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" name="busca" class="form-control"/>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary">
+                                Pesquisar
+                        </button>
+
+                    </div>
+
+
+
+
+                </div>
+
+                <form action="/Produto;Pesquisa" method="get">
+                    
+                </form>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>E-MAIL</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    <tr>
+                        <td>Arthur</td>
+                        <td>16 99706-6530</td>
+                        <td>Arthurfelipe123@gmail.com</td>
+                        <td>
+                            <a href="/Cliente/Editar/1" class="btn btn-warning">
+                                Editar
+                            </a>
+                            <a href="/Cliente/Excluir/1" class="btn btn-danger">
+                                Excluir
+                            </a>
+                        </td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>Diego</td>
+                        <td>16 99456-8748</td>
+                        <td>diegopereira96@gmail.com</td>
+                        <td>
+                            <a href="/Cliente/Editar/2" class="btn btn-warning">
+                                Editar
+                            </a>
+                            <a href="/Cliente/Excluir/2" class="btn btn-danger">
+                                Excluir
+                            </a>
+                        </td>
+
+
+                    </tr>
+
+                     <tr>
+                        <td>Francisco</td>
+                        <td>16 99768-9139</td>
+                        <td>franciscoemannueldasilva@gmail.com</td>
+                        <td>
+                            <a href="/Cliente/Editar/3" class="btn btn-warning">
+                                Editar
+                            </a>
+                            <a href="/Cliente/Excluir/3" class="btn btn-danger">
+                                Excluir
+                            </a>
+                        </td>
+
+
+                    </tr>
+
+                </thbody>
+                </table>
+    </div>
+
+    <div class="col-3">
+    </div>
+</div>
