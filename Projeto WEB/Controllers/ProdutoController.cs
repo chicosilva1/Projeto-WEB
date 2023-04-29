@@ -3,30 +3,58 @@ using Projeto_WEB.Models;
 
 namespace Projeto_WEB.Controllers
 {
-
     public class ProdutoController : Controller
     {
-        public static List<ProdutoModel> nbd = new List<ProdutoModel>();
+
+        public static List<ProdutoModel> ndb = new List<ProdutoModel>();
         public IActionResult Lista()
         {
-            return View();
+            return View(ndb);
         }
-
-        public IActionResult Cadastrar() {
+        public IActionResult Cadastrar()
+        {
             ProdutoModel model = new ProdutoModel();
             return View(model);
         }
-    public IActionResult SalvarDados(ProdutoModel produto)
+        [HttpPost]
+        public IActionResult SalvarDados(ProdutoModel produto)
         {
             if (produto.Id == 0)
             {
                 Random rand = new Random();
 
                 produto.Id = rand.Next(1, 9999);
-                nbd.Add(produto);
+                ndb.Add(produto);
+            }
+            else
+            {
+                int indice = ndb.FindIndex(a => a.Id == produto.Id);
+                ndb[indice] = produto;
             }
             return RedirectToAction("Lista");
+        }
 
+        public IActionResult Excluir(int id)
+        {
+            ProdutoModel item = ndb.Find(a => a.Id == id);
+            if (item!= null)
+            {
+                ndb.Remove(item);
+            }
+            return RedirectToAction("Lista");
+        }
+
+        public IActionResult Editar(int id)
+        {
+            ProdutoModel item = ndb.Find(produto => produto.Id == id);
+            if (item != null)
+            {
+                return View(item);
+            }
+            else
+            {
+                return RedirectToAction("Lista");
+            }
         }
     }
 }
