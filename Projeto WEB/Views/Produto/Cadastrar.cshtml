@@ -1,4 +1,4 @@
-﻿
+﻿@model Projeto_WEB.Models.ProdutoModel
 <div class="row">
     <div class="col-4">
     </div>
@@ -9,12 +9,12 @@
             <h2>Cadastro de Produto</h2>
         </div>
         <div class="card-body">
-            <form action="/Produto/Salvar" method="post">
-                <label>Nome</nome>
+            <form action="/Produto/SalvarDados" method="post">
+                <label>Nome</label>
                 <input type="text" name="Nome" class="form-control />"
                 <br/>
                 <label>Quantidade no estoque</label>
-                <input type="number" name="QtdEstoque" class="form-control" />
+                <input type="text" name="QtdEstoque" class="form-control" />
                 <br/>
                 <button onclick="myFunction()"><img src="~/MARIO.jpg" width="100" height="100"/>
             </form>
