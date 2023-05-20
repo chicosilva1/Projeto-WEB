@@ -1,13 +1,14 @@
-﻿@model List<Projeto_WEB.Models.ProdutoModel>
+﻿@model List<Projeto_WEB.Tabelas.Produtos>
 <div class="row">
 
-    <div class="col-12
+    <div class="col-12>
 ">
         <div class="card">    
             <div class="card-header">
                 <h2>Lista de Produtos</h2>
             </div>
             <div class="card-body">
+                <form action="/Produto/Lista" class="btn btn-success">
                 <div class="row">
                     <div class="col-2">
                         <a href="/Produto/Cadastrar" class="btn btn-success">
@@ -29,11 +30,9 @@
                         <button class="btn btn-primary">
                                 Pesquisar
                         </button>
-
                     </div>
-
                 </div>
-
+                </form>
                 <form action="/Produto;Pesquisa" method="get">
                     
                 </form>
@@ -51,8 +50,9 @@
                        {     
                        <tr>
                                 <td>@produto.Id</td>
-                                <td>@produto.Nome</td>
-                                <td>@produto.QtdEstoque</td>
+                                <td>@produto.Descricao</td>
+                                <td>@produto.Valor</td>
+                                <td>@produto.Categoria.Nome</td>
                                 <td>
                                     <a href="/Produto/Editar/@produto.Id"
                                     class="btn btn-warning">
@@ -69,6 +69,7 @@
                 </thbody>
                 </table>
     </div>
+        </div>
 
     <div class="col-3">
     </div>

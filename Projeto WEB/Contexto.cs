@@ -6,6 +6,8 @@ namespace Projeto_WEB
     {
         public Contexto(DbContextOptions<Contexto> opt) 
             :base(opt) { }
+
+        public DbSet<Categorias> Produto { get; set; }
         public DbSet<Categorias> Categorias { get; set; }   
     }
 }

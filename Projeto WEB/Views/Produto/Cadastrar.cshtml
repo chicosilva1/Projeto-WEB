@@ -16,7 +16,16 @@
                 <label>Quantidade no estoque</label>
                 <input type="text" name="QtdEstoque" class="form-control" />
                 <br/>
-                <button onclick="myFunction()"><img src="~/MARIO.jpg" width="100" height="100"/>
+                <select name="CategoriaId" class="form-control">
+                    @foreach (var categoria in Model.TodasCategorias)
+                    {
+                        <option value="@categoria.Id">
+                            @categoria.Nome
+                        </option>
+                    }
+                    </select>
+                    <button onclick="myFunction()"><img src="~/MARIO.jpg" width="100" height="100"/>
+
             </form>
         </div>
         </div>
